@@ -1,0 +1,84 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: May 16, 2020 at 06:24 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `blogs`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(6) NOT NULL,
+  `name` varchar(300) DEFAULT NULL,
+  `description` varchar(6000) DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `author` varchar(300) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `image` blob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `name`, `description`, `category`, `author`, `status`, `date`, `time`, `image`) VALUES
+(1, 'Even Strong People Need A Break. They Might Just Be The Ones Who Need It Most.', 'Have you ever thought about how weird it is that certain people get labelled as being &lsquo;strong&rsquo;? As soon as someone develops a reputation for being able to put up with a lot without letting it show, people tend to treat them as though they were invincible. \r\n\r\nWhen times get hard for them, they get overlooked. Everyone assumes that they&rsquo;re fine, because everyone else assumes that they&rsquo;re fine, too. But what if they&rsquo;re not? What are people who everyone perceives to be strong supposed to do when they feel vulnerable and alone?\r\n\r\nThe thing is, even the strongest people struggle with life. It doesn&rsquo;t matter how strong you are, or how strong people think you are. Life gets tough for everybody, and there&rsquo;s nothing that we can do about it except be there for each other and support one another, regardless of who it is.\r\n\r\nIn difficult times like these, when the world has been turned on its head by a virus, when everybody is staying indoors and life is at its craziest and nothing seems to make sense, we need to pull together and help one another more than ever. The most important thing we can do is to remember to look out for the people who are busy looking out for everybody else. \r\n\r\nThe people who seem to need the least help are often the ones who feel like they can&rsquo;t ask for it. They struggle on in quiet desperation, hoping that someone will check in on them to make sure that they&rsquo;re doing okay.\r\n\r\nEven the strongest people fall apart sometimes. No one is invincible; everybody breaks down. The toughest among us need love, care, and support too. Even the most sturdy rocks are eroded by the waves eventually, so we need to make sure that we&rsquo;re there for each other to lean on when times get tough.\r\n\r\nIn times of crisis, the thing that gives us strength is our sense of community; our feeling of being able to rely on those around us. That&rsquo;s always a two way street &ndash; we have to be willing to give as well as receive. Look out for the people around you, especially the ones who everyone assumes is doing fine, the ones who never seem to ask for any help. The one everyone expects can just keep on going no matter what. They might just be the ones who need it most.', 'Lifestyle', 'Maverick, Staff writer at Lessons Learned In Life Inc. &copy;', 'Published', '2020-05-16', '22:00:18', NULL),
+(2, 'Read This When You Feel Lonely And Forgotten About.', 'Being human is such an incredibly strange experience. We often find ourselves feeling lonely, isolated, and cut off from others, even though at the exact same time we withdraw more and more from social situations. We crave our solitude and time alone, while simultaneously wishing that people cared about us more or showed us how much we mean to them. We wish that they would check up on us and show that they want to hang out and spend time with us, but push them away and close ourselves off when they do. Sometimes it feels like to be human is to be caught in a constant double bind.\r\nWe all need social interaction; it&rsquo;s a fundamental part of our basic physiological needs, along with food, water, sleep, and shelter. It doesn&rsquo;t matter how introverted or antisocial we might feel at times &ndash; loneliness affects us all much more than we might think it does. It causes us physical and psychological damage. It stresses us out, and when we feel it for a prolonged period of time it can even shorten our lives.', 'Lifestyle', 'Maverick', 'Published', '2020-05-16', '22:01:38', NULL),
+(3, 'Bangkok Coconut Curry Noodle Bowls', 'This this this this thisssss.\r\n\r\nI am eating this Bangkok Coconut Curry Noodle Bowl for L &amp; D every day right now and I guess you could say it&rsquo;s going alright.\r\n\r\nAlright as in &ndash;&gt; creamy coconut curry sauce clinging to brown rice noodles (these are the ones I buy) with bright green asparagus nuggets and crunchy broccoli bites and carrot shreds and basil ribbons and a little pop of purple cabbage, because we&rsquo;re all about eating the rainbow around here. That is SO MUCH MORE than alright in my spicy noodle loving book.\r\n\r\nDoes it win your heart over even more if I tell you it takes less than 30 minutes to make?\r\n\r\nIt&rsquo;s the truth. Last night I made this for dinner (again) &ndash; I started things around 8:30pm, and we had our steaming rainbow bowls of it on the table before 9pm. So just take one of two things from that: a) I&rsquo;m not lying when I say this is a 30 minute super-quickie little coconut curry noodle bowl meal, and/or b) we are those people who eat dinner at 9pm.\r\n\r\nWait, does anyone even do that?\r\n\r\nJust, here, take some chopsticks.', 'Food', 'Shuchi Jena', 'Published', '2020-05-16', '22:05:29', NULL),
+(4, 'Borneo Part 1: Orangutans, Sunbears, and Turtles', 'I left my hotel in Singapore early in the morning and caught the first MRT train to the airport to catch my flight to Kota Kinabalu in Borneo. I was going to meet Mizzi there, and we would spend two weeks travelling the state of Sabah in the north of Borneo. Despite the early hour, there were so many people on the train that there was no seat for me. This was unfortunate since I was unwell. I guess I had overdone it with my 20 km walk through the city of Singapore in the heat the day before. Or maybe it was the jetlag kicking in. Usually I do not suffer from jetlag too much, simply by getting into the rhythm of the time zone I am in straight away, but this time I had woken up in the middle of the night two nights in a row and had spent one and a half or two hours doing email before being able to go back to sleep. Anyway, I did not want to pass out because I am sure they would have taken me to hospital suspecting I might have caught the coronavirus, and then they would not have \r\nSepilok Orangutan Rehabilitation Centre ISepilok Orangutan Rehabilitation Centre I\r\nSepilok Orangutan Rehabilitation Centre I\r\nMother with a very young baby.\r\nlet me leave the country for Malaysia. Therefore, I squatted on the floor, took deep breaths, and kept in motion. When arriving at the airport, I struggled my way through the terminals and sky train ride. It was a great relief to see my check in counter and drop off my backpack. After breakfast, I started feeling a bit better.', 'Travel', 'Ayush Goswami', 'Published', '2020-05-16', '22:08:58', NULL),
+(5, 'Wieliczka Salt Mine', 'The drive from Auschwitz to the Wieliczka salt mine took quite a while, maybe an hour, an hour and a half. There wasn\'t too much to see on the way apart from the sun starting to set in the sky and the beautiful colours it was producing. Since it had been a pretty full on morning, it was nice to relax and reflect on the things I\'d seen and heard, and take a little nap. When we arrived at the salt mine it was a short walk from the car park up a hill to the entrance. I hadn\'t really done any research on the salt mines, I just knew that they were a popular attraction to visit from Krakow. You cannot just wander around the mine, I bet they would lose quite a few people if they did that as the place is absolutely huge, and you are given a guided tour of the mine with a local guide. Our guide was really, really funny. He had a very dry sense of humour and I loved his craic. We were given headphones so that we could listen to him and started our descent down many, many stairs. The walk down \r\nWieliczka Salt MineWieliczka Salt Mine\r\nWieliczka Salt Mine\r\nthe stairs wasn\'t too difficult and there were markings to show how far down we had gone.', 'Travel', 'Shenon Brofolovski', 'Published', '2020-05-16', '22:11:37', NULL),
+(6, 'WWE\'s Money in the Bank Delivered', 'WWE&rsquo;s Money in the Bank was advertised to be one of the most unique pay per views the company has ever produced.\r\n\r\nWhile it did rank off the charts on the uniqueness level it also delivered laughs, surprises and even some very good wrestling matches.\r\n\r\nHere is how I graded each match;\r\n\r\nJeff Hardy d. Cesaro\r\n\r\nGreat match by both, The Charismatic Enigma Jeff Hardy looked good in his return from a long absence. Cesaro is definitely a talent that is being under used. Hardy got the win with his patented Swanton bomb off the top rope. Grade A-', 'Sports', 'Don August', 'Published', '2020-05-16', '22:12:41', NULL),
+(7, 'Anti-Inflammatory Coconut and Sweet Potato Muffins with Ginger, Turmeric, Cinnamon, and Maple Syrup', 'The idea that delicious baked goods can also be a healthy snack is extremely satisfying.\r\n\r\nTry to avoid the traditional inflammatory ingredients like processed grains, refined sugars, vegetable oils, and trans fat.\r\n\r\nIf you&rsquo;re able to replace them with anti-inflammatory ingredients that are rich in nutrients, you will end up with a healthy and tasty snack.\r\n\r\nThe recipe below contains a large amount of sweet potatoes or yams, which are very nutritious and a great source of antioxidants, vitamins, and minerals.', 'Food', 'Laura Flores', 'Draft', '2020-05-16', '22:14:51', NULL),
+(8, 'Reasons Why Cousins Make The Greatest Best Friends', 'Almost everybody has some kind of cousin in their life, whether they&rsquo;re a first cousin or a slightly more distant relation. We all know how it feels to have family around the same age as us who we&rsquo;ve grown up alongside and share a bond with unlike anyone else. Here are ten reasons why cousins make great best friends.\r\n\r\n \r\n\r\nThey make family holidays and gatherings bearable: let&rsquo;s be honest, without our cousins, family meetings would be torture. Between drunk relatives, annoying personalities, and the same old arguments, we need our cousins there to keep us sane and grounded. We need the people there who we can get away from the chaos and laugh about all of it with.\r\n \r\n\r\nYou&rsquo;re not just bound by friendship, you&rsquo;re related by blood: you may be great friends with your cousins, but you&rsquo;ll always be more than that. You&rsquo;re family, and family sticks together. It doesn&rsquo;t matter what happens, because you know that you&rsquo;ll always be there for each other in the end.\r\n \r\n\r\nThey know your family as well as you do: you don&rsquo;t have to worry about your dad being embarrassing or your grandma having one too many glasses of wine when you&rsquo;re with your cousins. They know your family just as well as you do, so nothing phases them.\r\n \r\n\r\nYou experience family losses alongside them: there&rsquo;s no worse experience in life than the people you love passing away. When you lose family, your cousins are right there with you, feeling that same pain and heartbreak and helping you through it just like you&rsquo;re helping them.', 'Lifestyle', 'Maverick', 'Draft', '2020-05-16', '22:16:01', NULL),
+(9, 'I&rsquo;m Not Afraid Of Being Alone. I&rsquo;m Scared Of Ending Up In A Lousy Relationship.', 'Let&rsquo;s face it, this generation&rsquo;s dating scene is absolutely ridiculous. For some people, the thought of being alone is too much to bear. They will go to any length to avoid it, even if that means being with someone that isn&rsquo;t right for them. To people who feel like this, being with the wrong person is better than being alone.\r\nBut I&rsquo;m different to people that feel that way. I&rsquo;m okay with being in my own company, and I don&rsquo;t need anyone there to distract me at any cost.', 'Fashion', 'Ritika Malpani', 'Draft', '2020-05-16', '22:16:29', NULL),
+(10, 'I&rsquo;d Rather Be Single Than Be In A Relationship That Makes Me Feel Alone.', 'While there are some who aren&rsquo;t afraid of being single or alone, for many people, being single is a nightmare. They crave the company of other people, and feel vulnerable and directionless when alone. For people like this, a relationship is the ultimate goal. It means they never have to be alone. Every night, they can sleep next to someone. Whenever they&rsquo;re bored, or lonely, they have someone to talk to and be with. This often means, however, that they get into relationships with the wrong people &ndash; they&rsquo;re more likely to overlook their partners flaws in their desperation to avoid being alone.', 'Lifestyle', 'Kashika Hamani', 'Draft', '2020-05-16', '22:17:11', NULL),
+(11, 'Damon Albarn Announces New Boiler Room Livestream', 'Damon Albarn has announced he will perform music from his new project The Nearer the Fountain, More Pure the Stream Flows on a livestream as part of Boiler Room&rsquo;s ongoing &ldquo;Streaming From Isolation&rdquo; series. Before the coronavirus pandemic, the Blur and Gorillaz frontman was set to take this new project on tour with &ldquo;orchestral instrumentation, electronics, vocals, and piano.&rdquo; Instead, the livestream will feature Albarn playing selections from the new project &ldquo;alone with materials from workshops interrupted by the global lockdown.&rdquo; It goes down 7 p.m. BST/2 p.m. Eastern on Sunday, May 17 over on Boiler Room&rsquo;s YouTube channel.', 'Music', 'Yayati Bhardwaj', 'Published', '2020-05-16', '22:19:17', NULL),
+(12, 'Veliko Tarnovo', 'I\'d arrived in Veliko Tarnovo quite late the night before. The minibus driver had been kind enough to drop us near the centre of town instead of the West Bus Station, which is about 5 kilometres out of town. It dramatically shortened the walk to my hostel. I was surprised at how quiet the streets had been. I was happy that when I got to my hostel there was still some of the free dinner left. After helping myself to some breakfast, I made a rough plan for my one full day in Veliko Tarnovo. Since Bulgaria had entered a state of lockdown, I was unsure what was open, so my first priority was to secure a bus ticket back to Sofia for the next day to make my flight out. The bus station where you get the bus to Sofia from is a lot closer than the other bus station, so I decided to have a leisurely walk there, stopping by anything that took my interest. I was retracing my steps from the night before walking along Ulitsa General Gurko. The street is really cute with a mixture of restored buildings and those in a sorry state of disrepair. I \r\nUlitsa General Gurko Ulitsa General Gurko \r\nUlitsa General Gurko\r\nliked that it was a mix as it stopped it from being too perfect and Disneyesque. The Street is named after Yoseph Vladimirovich Gurko, who played a major role in the Russo-Turkish War of 1877-78. I enjoyed my walk along the street, I really wished it had been longer as when I got to the main street, it was no where near as pretty. I made my way to the bus station. It was weird seeing all the bars and cafes closed up, after they had been filled with people the night before. The bus station was pretty quiet and I found the desk for the bus company I wanted easily. I somehow managed to score a cheap student ticket as someone had returned it and the ticket lady obviously couldn\'t be bothered to refund it and out it back in the system.', 'Travel', 'Eric Cartman', 'Draft', '2020-05-16', '22:20:06', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

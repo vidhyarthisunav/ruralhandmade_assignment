@@ -1,0 +1,11 @@
+CREATE TABLE blogs (
+id INT(6)AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(300),
+description VARCHAR(6000),
+category VARCHAR(50),
+author VARCHAR(300),
+status VARCHAR(50),
+date DATE,
+time TIME,
+image BLOB
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
