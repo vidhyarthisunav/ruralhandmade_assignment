@@ -29,6 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="#createblog"><span class="fa fa-address-card fa-lg"></span> Create</a></li>
                     <li class="nav-item"><a class="nav-link" href="javascript:{}" onclick="openinstructions()"><span class="fa fa-address-card fa-lg"></span><strong>Instructions</strong></a></li>
                 </ul>
+                <a class="navbar-brand" style="color:orange">Rural Handmade Assignment</a>
                 <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search Blog" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0 active" type="submit">Search</button>
@@ -61,9 +62,11 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-4 col-sm-2">
-                                        <a onclick="openblog(<?php echo $blog->id?>)" id="read<?php echo $blog->id?>" class="card-link btn btn-sm btn-primary text-white">Read Blog</a>
-                                        <a onclick="closeblog(<?php echo $blog->id?>)" id="hide<?php echo $blog->id?>"style="display:none" class="card-link btn-sm btn btn-primary text-white">Hide Blog</a>
+                                    <div class="col-4 col-sm-2" id="read<?php echo $blog->id?>">
+                                        <a onclick="openblog(<?php echo $blog->id?>)" class="card-link btn btn-sm btn-primary text-white">Read Blog</a>
+                                    </div>
+                                    <div class="col-4 col-sm-2" style="display:none" id="hide<?php echo $blog->id?>">
+                                        <a onclick="closeblog(<?php echo $blog->id?>)"  class="card-link btn-sm btn btn-primary text-white">Hide Blog</a>
                                     </div>
                                     <div class="col-4 col-sm-2">
                                         <a onclick="updateblog(<?php echo $blog->id?>)" class="card-link btn-sm btn btn-info ml-2 text-white">Update</a>
