@@ -83,34 +83,6 @@
                     </div>
                 </div>
             </div>
-            <div id="instructions" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="content">
-                    <div class="modal-content">
-                        <div class="modal-header bg-secondary">
-                            <h4 class="modal-title text-white">Please read carefully to better assess this assignment. Thank You!</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <ul>
-                                <li>This application essentialy has two sections Published blogs and Draft blogs.</li>
-                                <li>This application doesn`t have any home page, "Home" button takes you to top of the current section.</li>
-                                <li>Therefore, this website shows published blogs when first rendered by default.</li>
-                                <li>I have uploaded some blogs, so that you can test different functions.</li>
-                                <li>You can either publish or draft a blog after creating it.</li>
-                                <li>Search Utility: You can search blogs with any keyword, results would be retrieved from entire database.</li>
-                                <li>You can publish draft blogs by using "update" utility for a drafted blog.</li>
-                                <li>I have tried to incorporate PHP as best as I can to illustrate my skills.</li>
-                                <li>I have tried to adhere to MVC design pattern.</li>
-                                <li>I would request you to spend some time here. Assignments like these take time!</li>
-                                <li>Happy Blogging!</li>
-                            </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Proceed</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="deletemodal<?php echo $blog->id?>" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-sm" role="content">
                     <div class="modal-content">
@@ -209,6 +181,34 @@
         <?php endforeach; ?>
         <?php endif; ?>
     </div>
+    <div id="instructions" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="content">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary">
+                    <h4 class="modal-title text-white">Please read carefully to better assess this assignment. Thank You!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>This application essentialy has two sections Published blogs and Draft blogs.</li>
+                        <li>This application doesn`t have any home page, "Home" button takes you to top of the current section.</li>
+                        <li>Therefore, this website shows published blogs when first rendered by default.</li>
+                        <li>I have uploaded some blogs, so that you can test different functions.</li>
+                        <li>You can either publish or draft a blog after creating it.</li>
+                        <li>Search Utility: You can search blogs with any keyword, results would be retrieved from entire database.</li>
+                        <li>You can publish draft blogs by using "update" utility for a drafted blog.</li>
+                        <li>I have tried to incorporate PHP as best as I can to illustrate my skills.</li>
+                        <li>I have tried to adhere to MVC design pattern.</li>
+                        <li>I would request you to spend some time here. Assignments like these take time!</li>
+                        <li>Happy Blogging!</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mt-4"id="createblog">
         <div class ="row">
             <div class ="offset-md-2 col-12 col-sm-8">
@@ -260,10 +260,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="offset-2 col-2">
+                                    <div class="col-6 offset-md-2 col-md-2">
                                         <button type="submit" class="btn btn-primary" id="submit" name="submit" onclick="setpublish()">Publish Blog</button>
                                     </div>
-                                    <div class="col-2">
+                                    <div class="col-6 col-md-2">
                                         <button type="submit" class="btn btn-secondary" id="submit" name="submit" onclick="setdraft()">Add to Draft</button>
                                     </div>
                                 </div>
@@ -276,7 +276,50 @@
     </div>
 </body>
 </html>
-<script src="scripts/jquery/dist/jquery.slim.min.js"></script>
-<script src="scripts/popper.js/dist/umd/popper.min.js"></script>
-<script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="scripts/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function openblog(id){
+    document.getElementById(id).style.display='block';
+    document.getElementById("read"+id).style.display='none';
+    document.getElementById("hide"+id).style.display='inline';
+}
+function closeblog(id){
+    document.getElementById(id).style.display='none';
+    document.getElementById("hide"+id).style.display='none';
+    document.getElementById("read"+id).style.display='inline';
+}
+function updateblog(id){
+    var modalid = "#modal" + id;
+    $(modalid).modal("toggle");
+}
+function confirmdelete(id){
+    var modalid = "#deletemodal" + id;
+    $(modalid).modal("toggle");
+}
+function setpublish(){
+    document.getElementById('statussubmit').value = "Published";
+}
+function setdraft(){
+    document.getElementById('statussubmit').value = "Draft";
+}
+function openinstructions(){
+    $("#instructions").modal("toggle");
+}
+function select(id, category){
+    var selectid = "#category" + id;
+    $(selectid).val(category);
+}
+function changestatus(id){
+    
+    var draftid = "draft" + id;
+    var publishedid = "published" + id;
+    document.getElementById(draftid).checked = false;
+    document.getElementById(publishedid).checked = true;
+}
+function defaultset(id, category){
+    var selectid = "#category" + id;
+    document.getElementById(selectid ).value = "Food"
+}
+</script>

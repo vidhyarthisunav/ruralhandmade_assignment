@@ -1,8 +1,8 @@
 <?php
 
     //connecting with MySQL database
-    $pdo = new PDO('mysql:host=localhost;port=3306;dbname=blogs', 'sunav', 'harry');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include 'pdo_helper.php';
+    $pdo = pdoHelper();
     
 
     $name = htmlentities($_POST['name']);
